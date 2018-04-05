@@ -1,0 +1,32 @@
+<p id="notice"><%= notice %></br>Please specify the following:</p>
+
+<%= form_for @user do |f| %>
+<label for=:first_name>First name:</label>
+<%= f.text_field :first_name, value: @user.last_name, size: 10, maxlength: 5, autofocus: false, autocomplete: false %>
+</br>
+<label for=:last_name>Last name:</label>
+<%= f.text_field :last_name, disabled: true %>
+</br>
+<label for=:email>Email:</label>
+<%= f.email_field :email, placeholder: 'email@example.com', autofocus: true, required: true, pattern: '[^@]*[@][^@]*[.][^@]*' %>
+</br>
+<label for=:passhash>Password:</label>
+<%= f.password_field :passhash, size: 10, minlength: 6 %>
+</br>
+<label for=:passhash>Phone:</label>
+<%= f.text_area :phone, placeholder: 'Your phones, coma separated', size: "20x5" %>
+</br>
+<%= f.file_field :avatar %>
+</br>
+<label for=:slack_account>Slack account with autocomplete</label>
+<%= f.text_field :slack_account, list: "mySuggestion" %>
+<datalist id="mySuggestion">
+  <% @users.each do |user| %>
+  <% if user.group != '' then %>
+  <option><%= user.group %></option>
+  <% end %>
+  <% end %>
+</datalist>
+</br>
+<%= f.button 'Create' %>
+<% end %>
