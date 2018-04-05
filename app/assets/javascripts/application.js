@@ -17,3 +17,6 @@
 //= require jquery3
 //= require popper
 //= require bootstrap-sprockets
+
+//= require bootstrap-wysihtml5
+//= require bootstrap-wysihtml5/locales
