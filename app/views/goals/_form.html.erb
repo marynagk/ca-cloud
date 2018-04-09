@@ -13,13 +13,34 @@
 
   <div class="field">
     <%= f.label :keywords %><br />
-    <%= f.text_area :keywords %>
+    <%= f.text_area :keywords, style: "border-radius: 5px; box-shadow: 0 0 0 1px lightblue; border: 5px solid transparent;" %>
   </div>
   <div class="field">
     <%= f.label :description %><br />
-    <%= f.text_area :description %>
+    <%= f.text_area :description, id: "some-textarea", class: 'wysihtml5', size: '90x15', style: "border-radius: 5px; box-shadow: 0 0 0 1px lightblue; border: 5px solid transparent;" %>
+
   </div>
   <div class="actions">
     <%= f.submit %>
   </div>
+
+
+
+<script type="text/javascript">
+  $(document).ready(function(){
+
+    $('.wysihtml5').each(function(i, elem) {
+      // $('.textarea').wysihtml5();
+      $(elem).wysihtml5({ toolbar:{ "fa": true } });
+    });
+
+  })
+
+</script>
+
+<!-- <textarea id="some-textarea" placeholder="Enter text ..." style="styles to copy to the iframe"></textarea>
+<script type="text/javascript">
+	$('#some-textarea').wysihtml5();
+</script> -->
+
 <% end %>
