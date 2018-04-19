@@ -52,8 +52,9 @@
   </div>
 
   <div class="field">
-    <%= form.label :avatar %>
-    <%= form.text_field :avatar, id: :user_avatar %>
+    <%= form.label :avatar_obj %>
+    <!-- <%= form.text_field :avatar, id: :user_avatar %> -->
+    <%= form.file_field :avatar_obj, id: :user_avatar_obj, accept: 'image/png,image/gif,image/jpeg' %>
   </div>
 
   <div class="actions">

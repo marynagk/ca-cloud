@@ -2,7 +2,6 @@
 
 <table>
   <tr>
-    <th>Keywords</th>
     <th>Description</th>
     <th></th>
     <th></th>
@@ -11,7 +10,6 @@
 
 <% @goals.each do |goal| %>
   <tr>
-    <td><%= goal.keywords %></td>
     <td><%= goal.description %></td>
     <td><%= link_to 'Show', [goal.user, goal] %></td>
     <td><%= link_to 'Edit', edit_user_goal_path(goal.user, goal) %></td>

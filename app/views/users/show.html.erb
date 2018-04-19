@@ -42,7 +42,7 @@
 
 <p>
   <strong>Avatar:</strong>
-  <%= @user.avatar %>
+  <%= image_tag "/users/#{@user.id}/avatar/#{@user.avatar}" if @user.avatar? %>
 </p>
 
 <%= link_to 'Edit', edit_user_path(@user) %> |

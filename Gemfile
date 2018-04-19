@@ -24,6 +24,7 @@ gem 'jquery-rails'
 gem 'nested_scaffold'
 gem 'bootstrap-wysihtml5-rails'
 gem "font-awesome-rails"
+gem 'byebug'
 
 # Use CoffeeScript for .coffee assets and views
 gem 'coffee-rails', '~> 4.2'
