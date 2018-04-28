@@ -10,7 +10,16 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20180419111127) do
+ActiveRecord::Schema.define(version: 20180419120835) do
+
+  create_table "goal_keywords", force: :cascade do |t|
+    t.integer "keyword_id"
+    t.integer "goal_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["goal_id"], name: "index_goal_keywords_on_goal_id"
+    t.index ["keyword_id"], name: "index_goal_keywords_on_keyword_id"
+  end
 
   create_table "goals", force: :cascade do |t|
     t.integer "user_id"
@@ -18,15 +27,6 @@ ActiveRecord::Schema.define(version: 20180419111127) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["user_id"], name: "index_goals_on_user_id"
-  end
-
-  create_table "goals_keywords", force: :cascade do |t|
-    t.integer "keyword_id"
-    t.integer "goal_id"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-    t.index ["goal_id"], name: "index_goals_keywords_on_goal_id"
-    t.index ["keyword_id"], name: "index_goals_keywords_on_keyword_id"
   end
 
   create_table "keywords", force: :cascade do |t|
