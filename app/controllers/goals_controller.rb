@@ -1,5 +1,5 @@
 class GoalsController < ApplicationController
-  before_action :set_goals
+  before_action :set_user
   before_action :set_goal, only: [:show, :edit, :update, :destroy]
 
   # GET users/1/goals
@@ -33,6 +33,7 @@ class GoalsController < ApplicationController
 
   # PUT users/1/goals/1
   def update
+    byebug
     if @goal.update_attributes(goal_params)
       redirect_to([@goal.user, @goal], notice: 'Goal was successfully updated.')
     else
@@ -49,7 +50,7 @@ class GoalsController < ApplicationController
 
   private
     # Use callbacks to share common setup or constraints between actions.
-    def set_goals
+    def set_user
       @user = User.find(params[:user_id])
     end
 
@@ -59,6 +60,6 @@ class GoalsController < ApplicationController
 
     # Only allow a trusted parameter "white list" through.
     def goal_params
-      params.require(:goal).permit(:description, goal_keywords: [:keyword_id])
+      params.require(:goal).permit(:description, keyword_ids: [])
     end
 end

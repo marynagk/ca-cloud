@@ -1,0 +1,2 @@
+module GoalKeywordsHelper
+end

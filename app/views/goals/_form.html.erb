@@ -12,8 +12,8 @@
   <% end %>
 
   <div class="field">
-    <%= f.label :goal_keywords, "Keywords" %><br />
-    <%= f.collection_select :goal_keywords, Keyword.order(:name), :id, :name, {}, {multiple: true} %>
+    <%= f.label :keyword_ids, "Keywords" %><br />
+    <%= f.collection_select :keyword_ids, Keyword.order(:name), :id, :name, {}, {multiple:true} %>
   </div>
 
   <div class="field">

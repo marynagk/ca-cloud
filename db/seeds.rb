@@ -11,7 +11,8 @@ if Rails.env.development? then
     Keyword.create! name: 'keyword1'
     Keyword.create! name: 'keyword2'
     Keyword.create! name: 'keyword3'
-
+    Goal_keywords.destroy_all # vs. .delete_all
+    Goal_keyword.create! keyword_id: '2', goal_id: '11'
 end
 
 if Rails.env.production? then
