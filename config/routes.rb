@@ -1,5 +1,8 @@
 Rails.application.routes.draw do
   resources :users do
+    resources :expertises
+  end
+  resources :users do
     resources :goals
   end
   root 'users#index'

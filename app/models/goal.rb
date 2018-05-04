@@ -3,6 +3,7 @@ class Goal < ApplicationRecord
   belongs_to :user
   has_many :goal_keywords
   has_many :keywords, through: :goal_keywords
+    has_many :events, as: :eventable
   # accepts_nested_attributes_for :goal_keywords
 
 end
